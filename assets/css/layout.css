@@ -1,1 +1,11 @@
+/* Cards, badges, small bits */
+.badge { display:inline-block; padding:.25rem .5rem; border-radius:999px; background:#ffefc9; font-weight:700; font-size:.8rem; border:2px solid #111; }
+.pricing-card.featured { background: var(--brand-blue); color:#fff; }
+.pricing-card.featured .btn { background:#111; color:#fff; border-color:#fff; }
+.post { display:flex; flex-direction:column; gap:.5rem; }
+.product { display:flex; flex-direction:column; gap:.5rem; }
+.product img { border-radius:12px; }
+.cart-item { display:flex; align-items:center; justify-content:space-between; gap:.75rem; padding:.5rem 0; border-bottom:1px dashed #ddd; }
+.cart-item:last-child { border-bottom:0; }
+.loading { text-align:center; padding:1rem; color:#555; }
 
