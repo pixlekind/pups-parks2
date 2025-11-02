@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Walker Dashboard — Pups & Parks™</title>
+  <link rel="icon" href="assets/img/logo.svg" />
+  <!-- Base & Dark Glass Theme -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/theme-dark.css" />
+  <link rel="stylesheet" href="assets/css/dashboard.css" />
+  <!-- Scripts -->
+  <script defer src="assets/js/main.js"></script>
+  <script defer src="assets/js/dashboard.js"></script>
+</head>
+<body>
+  <!-- Site header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        <img src="assets/img/logo.svg" width="36" height="36" alt="logo" />
+        <span class="brand">Pups & Parks™</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="walkers.html">Walkers</a></li>
+          <li><a href="meetups.html">Meetups</a></li>
+          <li><a href="feed.html">Feed</a></li>
+          <li><a href="marketplace.html">Marketplace</a></li>
+          <li><a class="active" href="walker-dashboard.html">Dashboard</a></li>
+          <li><a href="inbox.html">Inbox</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Dashboard top bar (floating, glass) -->
+  <section class="dash-topbar">
+    <div class="container dash-topbar-inner">
+      <div class="dash-tabs">
+        <a class="tab active" href="#overview">Overview</a>
+        <a class="tab" href="#subscription">Subscription</a>
+        <a class="tab" href="#metrics">Metrics</a>
+        <a class="tab" href="#settings">Settings</a>
+      </div>
+      <div class="dash-user">
+        <div class="status-dot"></div>
+        <img class="avatar" src="https://i.pravatar.cc/80?img=12" alt="You" />
+      </div>
+    </div>
+  </section>
+
+  <main class="section">
+    <div class="container grid dash-grid">
+      <!-- LEFT COLUMN -->
+      <div class="dash-col">
+        <!-- Overview Card -->
+        <article class="dash-card glass">
+          <div class="dash-head">
+            <h2>Welcome back, <span id="walkerName">Sarah</span> 👋</h2>
+            <span class="plan-badge" id="planBadge">Free Plan</span>
+          </div>
+
+          <p class="muted">
+            Manage your subscription, track your earnings and see your growth at a glance.  
+            Upgrade to <strong>Walker Pro</strong> for verified status, unlimited clients and premium inbox.
+          </p>
+
+          <div class="grid three metrics">
+            <div class="metric">
+              <div class="label">Monthly Walks</div>
+              <div class="value" id="mWalks">22</div>
+              <div class="spark" data-spark="12,15,18,16,20,22"></div>
+            </div>
+            <div class="metric">
+              <div class="label">Active Clients</div>
+              <div class="value" id="mClients">9</div>
+              <div class="spark" data-spark="3,5,6,7,8,9"></div>
+            </div>
+            <div class="metric">
+              <div class="label">Earnings (mo)</div>
+              <div class="value" id="mEarnings">£420</div>
+              <div class="spark" data-spark="60,120,180,260,330,420"></div>
+            </div>
+          </div>
+
+          <div class="progress-wrap">
+            <div class="row spread">
+              <strong>Requests Limit</strong>
+              <span id="reqLabel">0 / 1200</span>
+            </div>
+            <input id="reqSlider" class="slider" type="range" min="0" max="1200" value="300" />
+          </div>
+
+          <div class="row gap">
+            <a class="btn" href="#subscription">Manage Plan</a>
+            <a class="btn btn-outline" href="profile.html?u=sarah-johnson">View Public Profile</a>
+          </div>
+        </article>
+
+        <!-- Subscription Card -->
+        <article id="subscription" class="dash-card glass">
+          <div class="dash-head">
+            <h2>Subscription</h2>
+            <button class="chip" id="renewalDate">Renews: —</button>
+          </div>
+
+          <div class="grid three plan-grid">
+            <!-- Free -->
+            <div class="plan-card">
+              <div class="plan-title">Free</div>
+              <div class="plan-price">£0<span>/month</span></div>
+              <ul class="plan-list">
+                <li>Basic profile</li>
+                <li>5 posts / month</li>
+                <li>Community access</li>
+              </ul>
+              <button class="btn-outline" disabled>Current</button>
+            </div>
+
+            <!-- Pro -->
+            <div class="plan-card pro">
+              <div class="plan-title">Walker Pro</div>
+              <div class="plan-price">£25<span>/month</span></div>
+              <ul class="plan-list">
+                <li>✅ Verified Walker badge</li>
+                <li>Unlimited clients & posts</li>
+                <li>Premium Inbox + Priority Search</li>
+              </ul>
+              <button class="btn" id="upgradeBtn" data-plan="pro">Upgrade to Pro</button>
+              <small class="muted">Billing monthly via Stripe.</small>
+            </div>
+
+            <!-- Enterprise -->
+            <div class="plan-card ent">
+              <div class="plan-title">Team / Agency</div>
+              <div class="plan-price">Custom</div>
+              <ul class="plan-list">
+                <li>Multi-walker teams</li>
+                <li>Agency tools</li>
+                <li>Dedicated support</li>
+              </ul>
+              <a class="btn-outline" href="contact.html">Contact Sales</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <aside class="dash-col">
+        <!-- Activity Card -->
+        <article class="dash-card glass">
+          <div class="dash-head">
+            <h3>Recent Activity</h3>
+            <a class="link" href="feed.html">Open Feed →</a>
+          </div>
+          <ul class="activity">
+            <li><span>📩</span> New message from <strong>Emma</strong></li>
+            <li><span>⭐</span> New review: “Amazing walk!”</li>
+            <li><span>🗓️</span> Meetup RSVP: Hyde Park Group Walk</li>
+            <li><span>🐶</span> Client added <strong>Max</strong> to your schedule</li>
+          </ul>
+        </article>
+
+        <!-- Verified Card -->
+        <article class="dash-card glass verified">
+          <div class="dash-head">
+            <h3>Get Verified</h3>
+            <span class="chip">Boosted visibility</span>
+          </div>
+          <p class="muted">Verification adds trust and unlocks priority placement in the walkers directory.</p>
+          <div class="row gap">
+            <button class="btn" id="verifyBtn">Verify via Stripe</button>
+            <a class="btn btn-outline" href="walkers.html">Browse Directory</a>
+          </div>
+          <p id="verifyNote" class="hint">After successful payment, your badge appears instantly.</p>
+        </article>
+
+        <!-- Support Card -->
+        <article class="dash-card glass">
+          <div class="dash-head">
+            <h3>Need Help?</h3>
+          </div>
+          <p class="muted">Questions about your plan or verification? We’re here for you.</p>
+          <div class="row gap">
+            <a class="btn btn-outline" href="inbox.html?to=Support">Contact Support</a>
+            <a class="btn" href="pricing.html">View Pricing</a>
+          </div>
+        </article>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Pups & Parks™ • Walker Dashboard</p>
+  </footer>
+</body>
+</html>
