@@ -1,5 +1,13 @@
+/* Motion & delight */
 .reveal{opacity:0;transform:translateY(18px) scale(.98);animation:fadeUp .7s cubic-bezier(.2,.7,.2,1) forwards}
 @keyframes fadeUp{to{opacity:1;transform:none}}
 .btn{position:relative;overflow:hidden}
-.btn::after{content:'';position:absolute;left:50%;top:50%;width:0;height:0;border-radius:50%;background:rgba(255,255,255,.35);transform:translate(-50%,-50%);transition:width .6s,height .6s}
+.btn::after{
+  content:'';position:absolute;left:50%;top:50%;width:0;height:0;border-radius:50%;
+  background:rgba(255,255,255,.35);transform:translate(-50%,-50%);transition:width .6s,height .6s
+}
 .btn:active::after{width:260px;height:260px}
+
+/* Like pop (use class .pop) */
+@keyframes pop{0%{transform:scale(1)}40%{transform:scale(1.15)}100%{transform:scale(1)}}
+.pop{animation:pop .25s ease}
