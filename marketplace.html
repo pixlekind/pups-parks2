@@ -3,87 +3,57 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Marketplace — Pups & Parks™ Community</title>
+  <title>Community Marketplace — Pups & Parks™</title>
   <link rel="icon" href="assets/img/logo.svg" />
   <link rel="stylesheet" href="assets/css/styles.css" />
-  <script src="assets/js/market.js" defer></script>
+  <script defer src="assets/js/market.js"></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html">
-        <img src="assets/img/logo.svg" width="32" height="32" alt="" />
-        <span class="brand-text">Pups & Parks™</span>
-      </a>
-      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
-      <nav class="nav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="feed.html">Feed</a></li>
-          <li><a class="active" href="marketplace.html">Marketplace</a></li>
-          <li><a href="inbox.html">Inbox</a></li>
-        </ul>
-      </nav>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html"><img src="assets/img/logo.svg" width="36" height="36" alt=""><span class="brand">Pups & Parks™</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="walkers.html">Walkers</a></li>
+        <li><a href="meetups.html">Meetups</a></li>
+        <li><a href="feed.html">Feed</a></li>
+        <li><a class="active" href="marketplace.html">Marketplace</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="section">
+  <div class="container">
+    <div class="section-head">
+      <h1>Peer-to-Peer Marketplace</h1>
+      <div class="chip">Sell • Swap • Gift</div>
     </div>
-  </header>
 
-  <main class="market section">
-    <div class="container">
-      <div class="market-header">
-        <h1>Community Marketplace</h1>
-        <div class="tag">Peer-to-peer · Sell · Swap · Gift</div>
+    <form id="listing-form" class="card reveal">
+      <div class="grid two">
+        <input id="l-title" class="input" placeholder="Title (e.g., Reflective Harness M)" required />
+        <input id="l-price" class="input" type="number" step="0.01" placeholder="Price (GBP)" required />
+        <input id="l-img" class="input" placeholder="Image URL" />
+        <input id="l-loc" class="input" placeholder="Location (e.g., Battersea)" />
       </div>
-
-      <!-- Create Listing -->
-      <div class="card reveal">
-        <h3 style="margin-bottom:.5rem">Create a Listing</h3>
-        <form id="listing-form" autocomplete="off">
-          <div class="grid two-col">
-            <div>
-              <label class="tag">Title</label>
-              <input id="l-title" class="input" placeholder="Eco Rope Toy (small)" required />
-            </div>
-            <div>
-              <label class="tag">Price (GBP)</label>
-              <input id="l-price" class="input" type="number" step="0.01" placeholder="8.99" required />
-            </div>
-            <div>
-              <label class="tag">Image URL</label>
-              <input id="l-img" class="input" placeholder="https://…" />
-            </div>
-            <div>
-              <label class="tag">Location</label>
-              <input id="l-loc" class="input" placeholder="Notting Hill, London" />
-            </div>
-          </div>
-          <label class="tag" style="margin-top:.5rem; display:inline-block;">Description</label>
-          <textarea id="l-desc" class="input" placeholder="Gently used, great for tug. My pup has outgrown it." required></textarea>
-
-          <div class="grid two-col" style="margin-top:.75rem">
-            <div>
-              <label class="tag">Your name</label>
-              <input id="l-seller" class="input" placeholder="e.g. Emma Martinez" />
-            </div>
-            <div>
-              <label class="tag">Avatar URL (optional)</label>
-              <input id="l-avatar" class="input" placeholder="https://…" />
-            </div>
-          </div>
-
-          <div style="display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.75rem">
-            <button class="btn btn-mint" type="submit">Publish Listing</button>
-            <button class="btn btn-outline" id="seed-listings" type="button">Seed demo listings</button>
-          </div>
-        </form>
+      <textarea id="l-desc" class="input" placeholder="Description" required></textarea>
+      <div class="grid two">
+        <input id="l-seller" class="input" placeholder="Your name" />
+        <input id="l-avatar" class="input" placeholder="Avatar URL (optional)" />
       </div>
+      <div class="row">
+        <button class="btn btn-mint" type="submit">Publish Listing</button>
+        <button class="btn btn-outline" id="seed-listings" type="button">Seed demo listings</button>
+      </div>
+    </form>
 
-      <!-- Listings -->
-      <div id="market-list" class="market-grid"></div>
-    </div>
-  </main>
+    <div id="market-list" class="grid three"></div>
+  </div>
+</main>
 
-  <footer class="site-footer">
-    <p>© 2025 Pups & Parks™</p>
-  </footer>
+<footer class="site-footer"><p>© 2025 Pups & Parks™</p></footer>
 </body>
 </html>
