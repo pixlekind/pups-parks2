@@ -3,29 +3,29 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pups & Parks™ — Premium Dog Walking</title>
-  <meta name="description" content="Pups & Parks™ connects walkers and dog lovers. Subscribe, share walks, shop curated gear, and chat in real-time." />
+  <title>Pups & Parks™ — Find Trusted Dog Walkers & Meetups</title>
+  <meta name="description" content="Checkatrade-style verified dog walkers, community meetups, marketplace and chat." />
   <link rel="icon" href="assets/img/logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css" />
-  <script src="assets/js/main.js" defer></script>
+  <script defer src="assets/js/main.js"></script>
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="index.html">
-        <img src="assets/img/logo.svg" alt="Pups & Parks logo" width="32" height="32" />
-        <span class="brand-text">Pups & Parks™</span>
+        <img src="assets/img/logo.svg" width="36" height="36" alt="Pups & Parks logo" />
+        <span class="brand">Pups & Parks™</span>
       </a>
-
       <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
-
       <nav class="nav">
         <ul>
-          <li><a href="index.html" class="active">Home</a></li>
+          <li><a class="active" href="index.html">Home</a></li>
+          <li><a href="walkers.html">Walkers</a></li>
+          <li><a href="meetups.html">Meetups</a></li>
           <li><a href="feed.html">Feed</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
           <li><a href="marketplace.html">Marketplace</a></li>
-          <li><a href="walker-dashboard.html">Dashboard</a></li>
           <li><a href="inbox.html">Inbox</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -34,45 +34,69 @@
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h1>Premium Dog Walking <span class="highlight">Made Simple</span></h1>
-        <p>Join our friendly community where walkers and dog owners connect effortlessly.</p>
-        <div class="actions">
-          <a href="feed.html" class="btn">Browse Feed</a>
-          <a href="pricing.html" class="btn btn-outline">Become a Walker</a>
-        </div>
-      </div>
-    </section>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="bg-blobs"></div>
+    <div class="container hero-inner">
+      <h1 class="hero-title">Find <span class="grad">Trusted Walkers</span> & Join Local <span class="grad">Meetups</span></h1>
+      <p class="hero-sub">Verified reviews, friendly community, and real-time chat — all in one place.</p>
 
-    <section class="features">
-      <div class="container">
-        <h2>Why Choose Pups & Parks?</h2>
-        <div class="grid">
-          <div class="card reveal">
-            <h3>🐾 Verified Walkers</h3>
-            <p>Every walker is vetted for safety and trustworthiness.</p>
-          </div>
-          <div class="card reveal">
-            <h3>📸 Live Feed</h3>
-            <p>Share walk moments and updates with clients and friends.</p>
-          </div>
-          <div class="card reveal">
-            <h3>💬 Premium Inbox</h3>
-            <p>Chat securely and instantly with your clients.</p>
-          </div>
-          <div class="card reveal">
-            <h3>🛍️ Marketplace</h3>
-            <p>Shop and gift the best dog products curated for you.</p>
-          </div>
-        </div>
+      <form class="searchbar" action="walkers.html">
+        <input name="q" placeholder="Search walkers, areas, breeds…" />
+        <input name="postcode" placeholder="Postcode e.g. SW11" />
+        <button class="btn btn-mint" type="submit">Search Walkers</button>
+      </form>
+
+      <div class="cta-row">
+        <a class="btn" href="meetups.html">Discover Meetups</a>
+        <a class="btn btn-outline" href="marketplace.html">Community Marketplace</a>
       </div>
-    </section>
-  </main>
+
+      <div class="trust-row">
+        <span class="chip">✅ Verified Walkers</span>
+        <span class="chip">⭐ Reviews</span>
+        <span class="chip">💬 Chat</span>
+        <span class="chip">🛍️ Peer-to-Peer</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlights -->
+  <section class="section">
+    <div class="container grid three">
+      <article class="card reveal">
+        <h3>🔎 Directory</h3>
+        <p>Browse verified walkers with reviews, badges and availability.</p>
+        <a class="btn btn-outline" href="walkers.html">Find Walkers</a>
+      </article>
+      <article class="card reveal">
+        <h3>📸 Feed</h3>
+        <p>Share walk updates, photos and cute moments with the community.</p>
+        <a class="btn btn-outline" href="feed.html">Open Feed</a>
+      </article>
+      <article class="card reveal">
+        <h3>📍 Meetups</h3>
+        <p>Group walks, park socials and rescue events near you.</p>
+        <a class="btn btn-outline" href="meetups.html">See Meetups</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- Trending meetups preview -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Upcoming Meetups</h2>
+        <a class="link" href="meetups.html">View all →</a>
+      </div>
+      <div id="meetups-preview" class="grid three"></div>
+    </div>
+  </section>
 
   <footer class="site-footer">
-    <p>© 2025 Pups & Parks™ • Built for dog lovers everywhere 🐶</p>
+    <p>© 2025 Pups & Parks™ • Built for dog lovers 🐶</p>
   </footer>
+
+  <script defer src="assets/js/meetups.js"></script>
 </body>
 </html>
