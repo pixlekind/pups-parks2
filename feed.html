@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Community Feed — Pups & Parks™</title>
+  <link rel="icon" href="assets/img/logo.svg" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script src="assets/js/feed.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        <img src="assets/img/logo.svg" alt="logo" width="32" height="32" />
+        <span class="brand-text">Pups & Parks™</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="feed.html" class="active">Feed</a></li>
+          <li><a href="marketplace.html">Marketplace</a></li>
+          <li><a href="walker-dashboard.html">Dashboard</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="feed-page">
+    <div class="container">
+      <h1>Community Feed</h1>
+      <p class="intro">See what other walkers and pet owners are sharing!</p>
+
+```
+  <div class="card">
+    <form id="create-post-form" class="post-form">
+      <textarea id="post-content" placeholder="Share your walk moments..." required></textarea>
+      <button type="submit" class="btn">Post Update</button>
+    </form>
+  </div>
+
+  <div id="posts-container" class="posts-grid"></div>
+</div>
+```
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Pups & Parks™</p>
+  </footer>
+</body>
+</html>
