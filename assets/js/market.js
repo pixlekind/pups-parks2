@@ -1,79 +1,67 @@
-// ===== Community Marketplace (Peer-to-Peer) =====
 document.addEventListener("DOMContentLoaded", ()=>{
-  const form = document.getElementById("listing-form");
-  const listEl = document.getElementById("market-list");
-  const seedBtn = document.getElementById("seed-listings");
-  const KEY = "pp_listings_v1";
+  const form=document.getElementById("listing-form");
+  const list=document.getElementById("market-list");
+  const seedBtn=document.getElementById("seed-listings");
+  const KEY="pp_listings_v2";
 
-  const uid = () => Math.random().toString(36).slice(2);
-  const get = () => { try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]} }
-  const set = (v) => localStorage.setItem(KEY, JSON.stringify(v));
+  const uid=()=>Math.random().toString(36).slice(2);
+  const get=()=>JSON.parse(localStorage.getItem(KEY)||"[]");
+  const set=(v)=>localStorage.setItem(KEY,JSON.stringify(v));
+  const esc=(t)=>{const d=document.createElement("div");d.textContent=t;return d.innerHTML;}
 
-  function render(){
-    const items = get().sort((a,b)=> new Date(b.ts) - new Date(a.ts));
-    listEl.innerHTML = items.length ? "" : `<div class="card"><p>No listings yet — be the first to sell, swap or gift! 🎁</p></div>`;
-    items.forEach(it=>{
-      const card = document.createElement("article");
-      card.className = "listing-card reveal";
-      card.innerHTML = `
-        ${it.img?`<img class="listing-img" src="${it.img}" alt="${it.title}">`:''}
-        <div class="listing-body">
-          <div class="listing-meta">
-            <h3 style="font-size:1.1rem">${escapeHtml(it.title)}</h3>
-            <strong>£${Number(it.price).toFixed(2)}</strong>
+  function render(rows){
+    list.innerHTML = rows.map(it=>`
+      <article class="listing-card reveal">
+        ${it.img?`<img class="listing-img" src="${it.img}" alt="">`:''}
+        <div class="card" style="border:none;box-shadow:none">
+          <div class="row" style="justify-content:space-between">
+            <h3>${esc(it.title)}</h3><strong>£${Number(it.price).toFixed(2)}</strong>
           </div>
-          <p style="color:#475569">${escapeHtml(it.desc)}</p>
-          <div class="listing-meta">
-            <div class="seller">
-              <img src="${it.avatar||'assets/img/logo.svg'}" alt="${it.seller||'Seller'}" />
-              <span>${escapeHtml(it.seller||'Seller')}</span>
+          <p style="color:#475569">${esc(it.desc)}</p>
+          <div class="row" style="justify-content:space-between">
+            <div class="row" style="align-items:center">
+              <img src="${it.avatar||'assets/img/logo.svg'}" width="28" height="28" style="border-radius:999px;object-fit:cover">
+              <strong>${esc(it.seller||'Seller')}</strong>
             </div>
-            <span class="tag">${escapeHtml(it.loc||'Local')}</span>
+            <span class="chip">${esc(it.loc||'Local')}</span>
           </div>
-          <div style="display:flex; gap:.5rem; margin-top:.5rem">
+          <div class="row">
             <a class="btn btn-pink" href="inbox.html?to=${encodeURIComponent(it.seller||'Seller')}&item=${encodeURIComponent(it.title)}">Contact Seller</a>
             <button class="btn btn-outline" data-share>Share</button>
           </div>
         </div>
-      `;
-      listEl.appendChild(card);
-    });
+      </article>
+    `).join("") || `<div class="card">No listings yet — sell, swap or gift something!</div>`;
 
-    listEl.querySelectorAll("[data-share]").forEach(btn=>{
-      btn.addEventListener("click", ()=>{
-        const url = window.location.href;
-        if (navigator.share) navigator.share({title:"Pups & Parks Marketplace", url}).catch(()=>{});
-        else prompt("Copy link:", url);
-      });
-    });
+    list.querySelectorAll("[data-share]").forEach(b=> b.addEventListener("click",()=>{
+      const url=location.href; if(navigator.share) navigator.share({title:"Pups & Parks Marketplace",url}).catch(()=>{});
+      else prompt("Copy link:", url);
+    }));
   }
 
-  function escapeHtml(t){ const d=document.createElement("div"); d.textContent=t; return d.innerHTML; }
-
-  form?.addEventListener("submit", e=>{
+  form?.addEventListener("submit",e=>{
     e.preventDefault();
-    const title = document.getElementById("l-title").value.trim();
-    const price = parseFloat(document.getElementById("l-price").value||"0");
-    const img   = document.getElementById("l-img").value.trim();
-    const loc   = document.getElementById("l-loc").value.trim();
-    const desc  = document.getElementById("l-desc").value.trim();
-    const seller= document.getElementById("l-seller").value.trim() || "Community Member";
-    const avatar= document.getElementById("l-avatar").value.trim();
-    if (!title || !desc || isNaN(price)) return;
-
-    const all = get();
-    all.push({ id: uid(), title, price, img, loc, desc, seller, avatar, ts: new Date().toISOString() });
-    set(all);
-    form.reset(); render();
+    const row={
+      id:uid(),
+      title:document.getElementById("l-title").value.trim(),
+      price:parseFloat(document.getElementById("l-price").value||"0"),
+      img:document.getElementById("l-img").value.trim(),
+      loc:document.getElementById("l-loc").value.trim(),
+      desc:document.getElementById("l-desc").value.trim(),
+      seller:document.getElementById("l-seller").value.trim()||"Community Member",
+      avatar:document.getElementById("l-avatar").value.trim(),
+      ts:new Date().toISOString()
+    };
+    const all=get(); all.push(row); set(all); form.reset(); render(all);
   });
 
-  seedBtn?.addEventListener("click", ()=>{
-    const demo = [
-      {id:uid(), title:"Eco Rope Toy", price:8.99, img:"https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?q=80&w=1200&auto=format&fit=crop", loc:"Battersea", desc:"Durable rope, great for tug.", seller:"Emma Martinez", avatar:"https://i.pravatar.cc/120?img=5", ts:new Date().toISOString()},
-      {id:uid(), title:"Reflective Harness (M)", price:14.00, img:"https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=1200&auto=format&fit=crop", loc:"Camden", desc:"Soft padding, like new.", seller:"David Wilson", avatar:"https://i.pravatar.cc/120?img=33", ts:new Date().toISOString()}
+  seedBtn?.addEventListener("click",()=>{
+    const demo=[
+      {id:uid(),title:"Eco Rope Toy",price:8.99,img:"https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?q=80&w=1200&auto=format&fit=crop",loc:"Battersea",desc:"Durable rope, great for tug.",seller:"Emma M.",avatar:"https://i.pravatar.cc/120?img=5"},
+      {id:uid(),title:"Reflective Harness (M)",price:14,img:"https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=1200&auto=format&fit=crop",loc:"Camden",desc:"Soft padding, like new.",seller:"David W.",avatar:"https://i.pravatar.cc/120?img=33"}
     ];
-    set(demo); render();
+    set(demo); render(demo);
   });
 
-  render();
+  render(get());
 });
