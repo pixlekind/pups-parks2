@@ -3,46 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Inbox — Pups & Parks™ Messaging</title>
+  <title>Inbox — Pups & Parks™</title>
   <link rel="icon" href="assets/img/logo.svg" />
   <link rel="stylesheet" href="assets/css/styles.css" />
-  <script src="assets/js/inbox.js" defer></script>
+  <script defer src="assets/js/inbox.js"></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html">
-        <img src="assets/img/logo.svg" width="32" height="32" alt="" />
-        <span class="brand-text">Pups & Parks™</span>
-      </a>
-      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
-      <nav class="nav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="feed.html">Feed</a></li>
-          <li><a class="active" href="inbox.html">Inbox</a></li>
-          <li><a href="marketplace.html">Marketplace</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html"><img src="assets/img/logo.svg" width="36" height="36" alt=""><span class="brand">Pups & Parks™</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="walkers.html">Walkers</a></li>
+        <li><a href="meetups.html">Meetups</a></li>
+        <li><a href="inbox.html" class="active">Inbox</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-  <main class="inbox section">
-    <div class="container">
-      <h1>Messages</h1>
-      <div class="chat-window">
-        <div class="chat-header"><strong id="chat-title">Support</strong></div>
-        <div id="chat-messages" class="chat-body"></div>
-        <div class="chat-input">
-          <input id="chat-input" placeholder="Type a message…" />
-          <button id="chat-send" class="btn btn-pink">Send</button>
-        </div>
+<main class="section">
+  <div class="container">
+    <h1>Messages</h1>
+    <div class="chat-window">
+      <div class="chat-header"><strong id="chat-title">Support</strong></div>
+      <div id="chat-messages" class="chat-body"></div>
+      <div class="chat-input">
+        <input id="chat-input" placeholder="Type a message…" />
+        <button id="chat-send" class="btn btn-pink">Send</button>
       </div>
     </div>
-  </main>
+  </div>
+</main>
 
-  <footer class="site-footer">
-    <p>© 2025 Pups & Parks™</p>
-  </footer>
+<footer class="site-footer"><p>© 2025 Pups & Parks™</p></footer>
 </body>
 </html>
