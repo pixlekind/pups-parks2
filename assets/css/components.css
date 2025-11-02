@@ -1,51 +1,17 @@
-/* ===== Components: Cards, Buttons, Chips, Avatars ===== */
-.card{
-  background: var(--glass);
-  border: 1px solid var(--glass-stroke);
-  border-radius: var(--r-xl);
-  box-shadow: var(--shadow-1);
-  padding: 1.25rem;
-  backdrop-filter: blur(8px);
+.btn{--bg:var(--violet);--fg:#fff;display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.1rem;border-radius:14px;font-weight:800;border:2px solid #0b1020;background:var(--bg);color:var(--fg);box-shadow:6px 6px 0 #0b1020;cursor:pointer;text-decoration:none;transition:.2s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 #0b1020;filter:saturate(1.05)}
+.btn:active{transform:none;box-shadow:3px 3px 0 #0b1020}
+.btn-outline{--bg:#fff;--fg:#0b1020;background:#fff}
+.btn-mint{--bg:var(--mint)}
+.btn-pink{--bg:var(--pink)}
+
+.input, .filterbar input, .filterbar select, .searchbar input{
+  padding:.85rem 1rem;border:1px solid var(--stroke);border-radius:14px;background:#fff;min-width:200px
 }
+.input:focus, .filterbar input:focus, .filterbar select:focus{outline:none;border-color:var(--violet);box-shadow:0 0 0 4px rgba(123,92,251,.12)}
 
-/* Buttons */
-.btn{
-  --bg: var(--brand);
-  --fg: #fff;
-  display:inline-flex; align-items:center; gap:.55rem;
-  padding:.8rem 1.15rem;
-  border-radius: 14px;
-  font-weight:800; letter-spacing:.2px;
-  border: 2px solid #0b1020;
-  background: var(--bg);
-  color: var(--fg);
-  box-shadow: 6px 6px 0 #0b1020;
-  transition: transform .15s ease, box-shadow .15s ease, filter .2s ease;
-  cursor:pointer; text-decoration:none;
-}
-.btn:hover{ transform: translate(-2px,-2px); box-shadow: 8px 8px 0 #0b1020; filter:saturate(1.1); }
-.btn:active{ transform: translate(0,0); box-shadow: 3px 3px 0 #0b1020; }
-.btn-outline{ --bg: #fff; --fg: #0b1020; background: var(--bg); border-color:#0b1020; }
-.btn-mint{ --bg: var(--mint); }
-.btn-pink{ --bg: var(--accent); }
+.link{font-weight:700;color:#111;text-decoration:none;border-bottom:2px solid rgba(123,92,251,.25)}
+.link:hover{border-color:var(--violet)}
 
-/* Badges + tags */
-.badge{ display:inline-block; padding:.25rem .6rem; border-radius:999px; font-size:.8rem; font-weight:800; background:#eef2ff; color:#4338ca; }
-.tag{ padding:.25rem .6rem; border-radius:10px; background:#f1f5f9; color:#0f172a; font-weight:700; font-size:.8rem; }
-
-/* Post cards */
-.post-card{ background:#fff; border:1px solid var(--glass-stroke); border-radius:16px; box-shadow:var(--shadow-1); padding:1rem; display:grid; gap:.6rem; }
-.post-head{ display:flex; align-items:center; gap:.75rem; }
-.avatar{ width:40px; height:40px; border-radius:999px; object-fit:cover; border:2px solid #fff; box-shadow:0 4px 10px rgba(0,0,0,.08); }
-.post-actions{ display:flex; gap:.5rem; }
-
-/* Form controls */
-.input, textarea{
-  width:100%; padding:.85rem 1rem; border-radius:14px; border:1px solid #e5e7eb; background:#fff;
-}
-input:focus, textarea:focus{ outline:none; border-color: var(--brand); box-shadow: 0 0 0 4px rgba(109,94,252,.12); }
-
-/* Like button */
-.like{ display:inline-flex; align-items:center; gap:.4rem; padding:.4rem .7rem; border-radius:999px; border:1px solid #e5e7eb; background:#fff; cursor:pointer; }
-.like.active{ border-color: #fecaca; background:#fff1f2; }
-.like .heart{ filter: drop-shadow(0 3px 8px rgba(255,114,182,.4)); }
+.row{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.6rem}
+.chip{display:inline-flex;align-items:center;gap:.35rem;padding:.35rem .6rem;border-radius:999px;background:#f3f4ff;border:1px solid var(--stroke);font-weight:700}
