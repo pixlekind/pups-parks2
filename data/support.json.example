@@ -1,0 +1,13 @@
+{
+  "messages": [
+    {
+      "id": "msg1",
+      "userId": "client1",
+      "userName": "Mike Chen",
+      "message": "How do I book a dog walker?",
+      "timestamp": "2024-01-15T10:30:00Z",
+      "response": "You can browse available walkers in the feed and message them directly!",
+      "responded": true
+    }
+  ]
+}

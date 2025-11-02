@@ -1,0 +1,57 @@
+{
+  "users": [
+    {
+      "id": "walker1",
+      "name": "Sarah Johnson",
+      "email": "sarah@pupswalks.com",
+      "role": "walker",
+      "avatar": "/assets/img/avatar-walker1.jpg",
+      "subscriptionStatus": "active",
+      "stripeCustomerId": "cus_test123",
+      "subscriptionId": "sub_test123",
+      "badges": ["Top Walker", "5-Star Rated"],
+      "rating": 4.9,
+      "walksCompleted": 127,
+      "joinedDate": "2023-01-15",
+      "bio": "Passionate dog walker with over 5 years of experience. Specialized in puppy training and senior dog care.",
+      "location": "London, UK",
+      "phone": "+44 7123 456789"
+    },
+    {
+      "id": "client1",
+      "name": "Mike Chen",
+      "email": "mike@email.com",
+      "role": "client",
+      "avatar": "/assets/img/avatar-client1.jpg",
+      "subscriptionStatus": "free",
+      "joinedDate": "2023-06-20"
+    }
+  ],
+  "posts": [
+    {
+      "id": "post1",
+      "authorId": "walker1",
+      "authorName": "Sarah Johnson",
+      "authorAvatar": "/assets/img/avatar-walker1.jpg",
+      "content": "Beautiful morning walk with Max and Bella in Hyde Park! 🐕🌳 They love exploring the autumn leaves.",
+      "image": "/assets/img/walk1.jpg",
+      "timestamp": "2024-01-15T08:30:00Z",
+      "likes": 12,
+      "comments": 3,
+      "featured": true
+    }
+  ],
+  "analytics": {
+    "walker1": {
+      "totalWalks": 127,
+      "totalLikes": 342,
+      "newClients": 15,
+      "weeklyWalks": [12, 15, 18, 14, 16, 20, 22],
+      "monthlyRevenue": [850, 920, 1100, 1250],
+      "engagement": {
+        "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+        "data": [65, 78, 90, 81, 95, 110]
+      }
+    }
+  }
+}
