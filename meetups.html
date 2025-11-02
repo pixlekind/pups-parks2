@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dog Meetups & Events — Pups & Parks™</title>
+  <link rel="icon" href="assets/img/logo.svg" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script defer src="assets/js/meetups.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html"><img src="assets/img/logo.svg" width="36" height="36" alt=""><span class="brand">Pups & Parks™</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="walkers.html">Walkers</a></li>
+        <li><a class="active" href="meetups.html">Meetups</a></li>
+        <li><a href="feed.html">Feed</a></li>
+        <li><a href="marketplace.html">Marketplace</a></li>
+        <li><a href="inbox.html">Inbox</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="section">
+  <div class="container">
+    <div class="section-head">
+      <h1>Community Meetups</h1>
+      <button class="btn btn-outline" id="seed-events">Load demo events</button>
+    </div>
+
+    <form id="event-form" class="card reveal" autocomplete="off">
+      <h3>Create a Meetup</h3>
+      <div class="grid two">
+        <input id="e-title" class="input" placeholder="Title (e.g., Hyde Park Group Walk)" required />
+        <input id="e-date" class="input" type="datetime-local" required />
+        <input id="e-location" class="input" placeholder="Location / Park" required />
+        <input id="e-host" class="input" placeholder="Host name" />
+      </div>
+      <textarea id="e-desc" class="input" placeholder="Details (friendly dogs, on-lead, etc.)" required></textarea>
+      <button class="btn btn-mint" type="submit">Publish Meetup</button>
+    </form>
+
+    <div id="events-list" class="grid three"></div>
+  </div>
+</main>
+
+<footer class="site-footer"><p>© 2025 Pups & Parks™</p></footer>
+</body>
+</html>
