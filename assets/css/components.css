@@ -1,13 +1,42 @@
-/* Reveal + subtle interactions */
-.reveal { opacity:0; transform: translateY(20px); animation: fadeUp .8s ease forwards; }
-@keyframes fadeUp { to { opacity:1; transform:none; } }
+/* ===== Buttons, Forms, and Reusables ===== */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--brand-blue);
+  border: 3px solid var(--brand-dark);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  transition: all 0.2s ease;
+}
 
-/* Button ripple */
-.btn { position:relative; overflow:hidden; }
-.btn::after { content:''; position:absolute; top:50%; left:50%; width:0; height:0; border-radius:50%; background: rgba(255,255,255,0.35); transform: translate(-50%,-50%); transition: width .6s, height .6s; }
-.btn:active::after { width:300px; height:300px; }
+.btn:hover {
+  background: #005fcc;
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 var(--brand-dark);
+}
 
-/* Card hover lift */
-.card { transition: transform .2s ease, box-shadow .2s ease; }
-.card:hover { transform: translateY(-6px); box-shadow: 12px 12px 0 var(--brand-dark); }
+.btn-outline {
+  background: transparent;
+  color: var(--brand-dark);
+}
 
+.btn-outline:hover {
+  background: var(--brand-dark);
+  color: #fff;
+}
+
+textarea, input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--brand-dark);
+  border-radius: 8px;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+textarea:focus, input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
