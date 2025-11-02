@@ -1,1 +1,33 @@
+[
+  {
+    "id": "toy01",
+    "name": "Chew & Play Rope",
+    "desc": "Durable cotton rope toy perfect for tug and fetch.",
+    "price": 8.99
+  },
+  {
+    "id": "treat01",
+    "name": "Organic Peanut Butter Treats",
+    "desc": "Healthy handmade treats loved by pups everywhere.",
+    "price": 6.50
+  },
+  {
+    "id": "harness01",
+    "name": "Adjustable Comfort Harness",
+    "desc": "Soft, padded harness with reflective trim for safe walks.",
+    "price": 19.99
+  },
+  {
+    "id": "gift01",
+    "name": "Pups & Parks™ Gift Card",
+    "desc": "Share the love of walking! Redeemable for any premium plan or store item.",
+    "price": 25.00
+  },
+  {
+    "id": "bowl01",
+    "name": "Collapsible Travel Bowl",
+    "desc": "Perfect for walks and trips to the park. BPA-free silicone.",
+    "price": 9.99
+  }
+]
 
