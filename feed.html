@@ -12,31 +12,44 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="index.html">
-        <img src="assets/img/logo.svg" alt="logo" width="32" height="32" />
+        <img src="assets/img/logo.svg" width="32" height="32" alt="" />
         <span class="brand-text">Pups & Parks™</span>
       </a>
       <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
       <nav class="nav">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="feed.html" class="active">Feed</a></li>
+          <li><a class="active" href="feed.html">Feed</a></li>
           <li><a href="marketplace.html">Marketplace</a></li>
-          <li><a href="walker-dashboard.html">Dashboard</a></li>
           <li><a href="inbox.html">Inbox</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main class="feed-page">
+  <main class="feed-page section">
     <div class="container">
       <h1>Community Feed</h1>
-      <p class="intro">See what walkers and pet owners are sharing!</p>
+      <p class="intro">Walk photos, park tips, cute moments — share it all! 🐶</p>
 
-      <div class="card">
-        <form id="create-post-form" class="post-form">
-          <textarea id="post-content" placeholder="Share your walk moments..." required></textarea>
-          <button type="submit" class="btn">Post Update</button>
+      <div class="card reveal">
+        <form id="create-post-form" class="post-form" autocomplete="off">
+          <div class="grid two-col">
+            <div>
+              <label class="tag">Your name</label>
+              <input id="post-name" class="input" placeholder="e.g. Sarah Johnson" />
+            </div>
+            <div>
+              <label class="tag">Avatar URL (optional)</label>
+              <input id="post-avatar" class="input" placeholder="https://…" />
+            </div>
+          </div>
+          <label class="tag" style="margin-top: .75rem; display:inline-block;">What’s new?</label>
+          <textarea id="post-content" class="input" placeholder="Hyde Park sunshine walk! 🌞🐾" required></textarea>
+          <div style="display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.75rem">
+            <button type="submit" class="btn btn-mint">Post Update</button>
+            <button type="button" id="seed-demo" class="btn btn-outline">Seed demo data</button>
+          </div>
         </form>
       </div>
 
