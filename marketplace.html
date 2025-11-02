@@ -1,9 +1,50 @@
-```
-  <aside class="cart card">
-    <h3>Your Cart</h3>
-    <div id="
-/button>
-  </aside>
-</div>
-```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Marketplace — Pups & Parks™</title>
+  <link rel="icon" href="assets/img/logo.svg" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script src="assets/js/market.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        <img src="assets/img/logo.svg" alt="logo" width="32" height="32" />
+        <span class="brand-text">Pups & Parks™</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="feed.html">Feed</a></li>
+          <li><a href="marketplace.html" class="active">Marketplace</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="inbox.html">Inbox</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
+  <main class="market">
+    <div class="container">
+      <h1>Shop for Dogs</h1>
+      <p>Curated dog gear, toys, and treats from trusted sellers.</p>
+      <div id="market-list" class="market-grid"></div>
+
+      <aside class="cart card">
+        <h3>Your Cart</h3>
+        <div id="cart-items"></div>
+        <p><strong>Total:</strong> <span id="cart-total">£0.00</span></p>
+        <button id="checkout-btn" class="btn">Checkout (demo)</button>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Pups & Parks™</p>
+  </footer>
+</body>
+</html>
