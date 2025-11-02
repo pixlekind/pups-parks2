@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>User Profile — Pups & Parks™</title>
+  <link rel="icon" href="assets/img/logo.svg" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script defer src="assets/js/main.js"></script>
+  <script defer src="assets/js/profile.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        <img src="assets/img/logo.svg" width="36" height="36" alt="logo">
+        <span class="brand">Pups & Parks™</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a class="active" href="walkers.html">Walkers</a></li>
+          <li><a href="meetups.html">Meetups</a></li>
+          <li><a href="feed.html">Feed</a></li>
+          <li><a href="marketplace.html">Marketplace</a></li>
+          <li><a href="inbox.html">Inbox</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <!-- Profile content will be rendered here -->
+      <div id="profile-root"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Pups & Parks™</p>
+  </footer>
+
+  <!-- Inline modal for reviews (self-contained for this page) -->
+  <div id="review-backdrop" class="modal-backdrop"></div>
+  <div id="review-modal" class="modal" aria-hidden="true" aria-labelledby="review-title">
+    <div class="modal-head">
+      <strong id="review-title">Leave a Review</strong>
+      <button class="btn btn-outline" id="review-close">Close</button>
+    </div>
+    <div class="modal-body">
+      <form id="review-form" autocomplete="off">
+        <div class="row">
+          <input id="r-name" class="input" placeholder="Your name" required />
+          <input id="r-avatar" class="input" placeholder="Avatar URL (optional)" />
+        </div>
+        <div class="row" style="align-items:center">
+          <label class="chip">Rating</label>
+          <select id="r-stars" class="input" style="max-width:140px" required>
+            <option value="5">★★★★★ (5)</option>
+            <option value="4">★★★★☆ (4)</option>
+            <option value="3">★★★☆☆ (3)</option>
+            <option value="2">★★☆☆☆ (2)</option>
+            <option value="1">★☆☆☆☆ (1)</option>
+          </select>
+        </div>
+        <textarea id="r-comment" class="input" placeholder="Write a quick note…" required></textarea>
+        <div class="row">
+          <button class="btn btn-mint" type="submit">Publish Review</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
