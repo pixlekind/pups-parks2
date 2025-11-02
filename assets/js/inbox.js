@@ -1,24 +1,33 @@
-(function(){
-const list = document.getElementById("chat-messages");
-const input = document.getElementById("chat-input");
-const send = document.getElementById("chat-send");
+// ===== Simple Inbox Chat =====
 
-function addMsg(text, me=false){
-const div=document.createElement("div");
-div.className="chat-msg" + (me?" me":"");
-div.textContent=text;
-list.appendChild(div);
-list.scrollTop = list.scrollHeight;
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const messages = document.getElementById("chat-messages");
+  const input = document.getElementById("chat-input");
+  const send = document.getElementById("chat-send");
 
-if (send) {
-send.addEventListener("click", ()=>{
-const t=(input.value||"").trim();
-if (!t) return;
-addMsg(t, true);
-input.value="";
-setTimeout(()=> addMsg("Got it! We'll be right with you 🐕"), 800);
+  const appendMessage = (text, type = "sent") => {
+    const msg = document.createElement("div");
+    msg.className = "chat-msg " + type;
+    msg.innerHTML = `<p>${text}</p>`;
+    messages.appendChild(msg);
+    messages.scrollTop = messages.scrollHeight;
+  };
+
+  send.addEventListener("click", () => {
+    const text = input.value.trim();
+    if (!text) return;
+    appendMessage(text, "sent");
+    input.value = "";
+
+    setTimeout(() => {
+      const replies = [
+        "Thanks for reaching out!",
+        "We’ll get back to you soon 🐾",
+        "Glad to help!",
+        "Your message has been received!"
+      ];
+      const reply = replies[Math.floor(Math.random() * replies.length)];
+      appendMessage(reply, "received");
+    }, 1000);
+  });
 });
-}
-})();
-
