@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "sarah-johnson",
+    "name": "Sarah Johnson",
+    "area": "SW11 • Battersea",
+    "rating": 4.9,
+    "badges": ["Verified", "Insurance", "First Aid"],
+    "breeds": ["Labrador", "Spaniel", "Doodle"],
+    "bio": "Friendly, reliable and fully insured. 100+ happy walks.",
+    "img": "https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    "slug": "david-wilson",
+    "name": "David Wilson",
+    "area": "NW1 • Camden",
+    "rating": 4.7,
+    "badges": ["Verified", "First Aid"],
+    "breeds": ["Terriers", "Shepherd"],
+    "bio": "Parks pro; group walks and solo sessions available.",
+    "img": "https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    "slug": "emma-martinez",
+    "name": "Emma Martinez",
+    "area": "E8 • Hackney",
+    "rating": 5.0,
+    "badges": ["Verified", "Insurance"],
+    "breeds": ["Small breeds", "Rescues"],
+    "bio": "Gentle with anxious pups. Flexible hours.",
+    "img": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=1200&auto=format&fit=crop"
+  }
+]
