@@ -1,0 +1,75 @@
+[
+  {
+    "id": "u_walker_sarah",
+    "slug": "sarah-johnson",
+    "role": "walker",
+    "name": "Sarah Johnson",
+    "city": "SW11 • Battersea, London",
+    "avatar": "https://i.pravatar.cc/120?img=12",
+    "cover": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop",
+    "bio": "Professional dog walker with 5+ years’ experience. Loves big parks and small pups. Fully insured & first-aid trained.",
+    "verified": true,
+    "badges": ["Insurance", "First Aid"],
+    "services": ["Solo Walks", "Group Walks", "Puppy Visits"],
+    "dogs": [
+      { "name": "Bella", "breed": "Cavapoo", "emoji": "🐶" },
+      { "name": "Rocky", "breed": "Beagle", "emoji": "🦴" }
+    ],
+    "reviews": [
+      {
+        "name": "Emma Martinez",
+        "avatar": "https://i.pravatar.cc/120?img=5",
+        "stars": 5,
+        "comment": "Sarah is the best! Bella adores her walks and always comes back happy.",
+        "date": "2025-10-02"
+      },
+      {
+        "name": "David Wilson",
+        "avatar": "https://i.pravatar.cc/120?img=33",
+        "stars": 4,
+        "comment": "Very reliable and friendly. Great communication too.",
+        "date": "2025-09-12"
+      }
+    ]
+  },
+  {
+    "id": "u_walker_david",
+    "slug": "david-wilson",
+    "role": "walker",
+    "name": "David Wilson",
+    "city": "NW1 • Camden, London",
+    "avatar": "https://i.pravatar.cc/120?img=36",
+    "cover": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=1200&auto=format&fit=crop",
+    "bio": "Parks pro — group walks & solo sessions. Calm with nervous dogs. DBS checked.",
+    "verified": true,
+    "badges": ["Verified"],
+    "services": ["Group Walks", "Day Care"],
+    "dogs": [],
+    "reviews": [
+      {
+        "name": "Maya Patel",
+        "avatar": "https://i.pravatar.cc/120?img=49",
+        "stars": 5,
+        "comment": "My terrier loves David! Always on time and super patient.",
+        "date": "2025-10-21"
+      }
+    ]
+  },
+  {
+    "id": "u_walker_emma",
+    "slug": "emma-martinez",
+    "role": "walker",
+    "name": "Emma Martinez",
+    "city": "E8 • Hackney, London",
+    "avatar": "https://i.pravatar.cc/120?img=7",
+    "cover": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=1200&auto=format&fit=crop",
+    "bio": "Gentle with anxious pups. Flexible hours. Rescue experience.",
+    "verified": false,
+    "badges": ["Insurance"],
+    "services": ["Solo Walks", "Pet Sitting"],
+    "dogs": [
+      { "name": "Milo", "breed": "Spaniel Mix", "emoji": "🐕" }
+    ],
+    "reviews": []
+  }
+]
