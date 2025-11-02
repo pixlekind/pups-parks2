@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Hyde Park Group Walk",
+    "date": "2025-11-10T14:00:00.000Z",
+    "location": "Hyde Park, London",
+    "host": "Sarah Johnson",
+    "desc": "Friendly dogs; bring water.",
+    "img": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    "title": "Puppy Social Hour",
+    "date": "2025-11-11T17:30:00.000Z",
+    "location": "Clissold Park, London",
+    "host": "Emma Martinez",
+    "desc": "For pups under 1yr; on-lead first 15m.",
+    "img": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    "title": "Rescue Meetup & Fundraiser",
+    "date": "2025-11-12T13:00:00.000Z",
+    "location": "Battersea Park",
+    "host": "David Wilson",
+    "desc": "£5 suggested donation; treats provided.",
+    "img": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?q=80&w=1200&auto=format&fit=crop"
+  }
+]
