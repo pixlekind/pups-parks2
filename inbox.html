@@ -1,1 +1,50 @@
 
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inbox — Pups & Parks™ Messaging</title>
+  <link rel="icon" href="assets/img/logo.svg" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script src="assets/js/inbox.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        <img src="assets/img/logo.svg" alt="logo" width="32" height="32" />
+        <span class="brand-text">Pups & Parks™</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="feed.html">Feed</a></li>
+          <li><a href="inbox.html" class="active">Inbox</a></li>
+          <li><a href="marketplace.html">Marketplace</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="inbox">
+    <div class="container">
+      <h1>Messages</h1>
+      <div class="chat-window">
+        <div class="chat-header"><strong>Support</strong></div>
+        <div id="chat-messages" class="chat-body"></div>
+        <div class="chat-input">
+          <input id="chat-input" placeholder="Type a message..." />
+          <button id="chat-send" class="btn">Send</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Pups & Parks™</p>
+  </footer>
+</body>
+</html>
