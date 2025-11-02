@@ -6,59 +6,44 @@
   <title>Community Feed — Pups & Parks™</title>
   <link rel="icon" href="assets/img/logo.svg" />
   <link rel="stylesheet" href="assets/css/styles.css" />
-  <script src="assets/js/feed.js" defer></script>
+  <script defer src="assets/js/feed.js"></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html">
-        <img src="assets/img/logo.svg" width="32" height="32" alt="" />
-        <span class="brand-text">Pups & Parks™</span>
-      </a>
-      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
-      <nav class="nav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a class="active" href="feed.html">Feed</a></li>
-          <li><a href="marketplace.html">Marketplace</a></li>
-          <li><a href="inbox.html">Inbox</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html"><img src="assets/img/logo.svg" width="36" height="36" alt=""><span class="brand">Pups & Parks™</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="walkers.html">Walkers</a></li>
+        <li><a href="meetups.html">Meetups</a></li>
+        <li><a class="active" href="feed.html">Feed</a></li>
+        <li><a href="marketplace.html">Marketplace</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-  <main class="feed-page section">
-    <div class="container">
-      <h1>Community Feed</h1>
-      <p class="intro">Walk photos, park tips, cute moments — share it all! 🐶</p>
-
-      <div class="card reveal">
-        <form id="create-post-form" class="post-form" autocomplete="off">
-          <div class="grid two-col">
-            <div>
-              <label class="tag">Your name</label>
-              <input id="post-name" class="input" placeholder="e.g. Sarah Johnson" />
-            </div>
-            <div>
-              <label class="tag">Avatar URL (optional)</label>
-              <input id="post-avatar" class="input" placeholder="https://…" />
-            </div>
-          </div>
-          <label class="tag" style="margin-top: .75rem; display:inline-block;">What’s new?</label>
-          <textarea id="post-content" class="input" placeholder="Hyde Park sunshine walk! 🌞🐾" required></textarea>
-          <div style="display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.75rem">
-            <button type="submit" class="btn btn-mint">Post Update</button>
-            <button type="button" id="seed-demo" class="btn btn-outline">Seed demo data</button>
-          </div>
-        </form>
+<main class="section">
+  <div class="container">
+    <h1>Community Feed</h1>
+    <form id="create-post-form" class="card reveal">
+      <div class="grid two">
+        <input id="post-name" class="input" placeholder="Your name" />
+        <input id="post-avatar" class="input" placeholder="Avatar URL (optional)" />
       </div>
+      <textarea id="post-content" class="input" placeholder="Share your walk moments… paste an image URL to attach a photo." required></textarea>
+      <div class="row">
+        <button type="submit" class="btn btn-mint">Post</button>
+        <button type="button" id="seed-demo" class="btn btn-outline">Seed demo posts</button>
+      </div>
+    </form>
 
-      <div id="posts-container" class="posts-grid"></div>
-    </div>
-  </main>
+    <div id="posts-container" class="grid three"></div>
+  </div>
+</main>
 
-  <footer class="site-footer">
-    <p>© 2025 Pups & Parks™</p>
-  </footer>
+<footer class="site-footer"><p>© 2025 Pups & Parks™</p></footer>
 </body>
 </html>
