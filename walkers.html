@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Find Verified Dog Walkers — Pups & Parks™</title>
+  <link rel="icon" href="assets/img/logo.svg" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script defer src="assets/js/walkers.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html"><img src="assets/img/logo.svg" width="36" height="36" alt=""><span class="brand">Pups & Parks™</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="walkers.html">Walkers</a></li>
+        <li><a href="meetups.html">Meetups</a></li>
+        <li><a href="feed.html">Feed</a></li>
+        <li><a href="marketplace.html">Marketplace</a></li>
+        <li><a href="inbox.html">Inbox</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="section">
+  <div class="container">
+    <h1>Verified Walkers</h1>
+    <form id="walker-filter" class="filterbar">
+      <input id="q" placeholder="Search name, postcode, breed…" />
+      <select id="rating">
+        <option value="">Rating</option>
+        <option>5+</option><option>4+</option><option>3+</option>
+      </select>
+      <select id="badge">
+        <option value="">Badge</option>
+        <option value="Verified">Verified</option>
+        <option value="First Aid">First Aid</option>
+        <option value="Insurance">Insurance</option>
+      </select>
+      <button class="btn btn-mint" type="submit">Apply</button>
+    </form>
+
+    <div id="walker-list" class="grid three"></div>
+  </div>
+</main>
+
+<footer class="site-footer"><p>© 2025 Pups & Parks™</p></footer>
+</body>
+</html>
