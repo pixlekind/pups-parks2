@@ -1,35 +1,6 @@
-/* ===== Mobile Nav & Responsive ===== */
-.nav-toggle {
-  display: none;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-/* Mobile nav */
-@media (max-width: 768px) {
-  .nav-toggle {
-    display: block;
-    color: var(--brand-dark);
-  }
-
-  .nav ul {
-    display: none;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-
-  .nav.open ul {
-    display: flex;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
+.nav-toggle{display:none;font-size:2rem;background:none;border:none;cursor:pointer}
+@media (max-width: 840px){
+  .nav-toggle{display:block}
+  .nav ul{display:none;flex-direction:column;gap:1rem;margin-top:1rem}
+  .nav.open ul{display:flex}
 }
