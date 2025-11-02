@@ -1,23 +1,38 @@
+/* Sections & grids */
 .section{padding:3rem 0}
 .section-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1rem}
 .grid{display:grid;gap:1rem}
 .grid.two{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
 .grid.three{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
 
-/* Search / filter bars */
+/* Bars */
 .searchbar,.filterbar{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;margin:1rem 0}
 .searchbar input,.filterbar input,.filterbar select{flex:1;min-width:220px}
 
-/* Cards */
-.card{background:#fff;border:1px solid var(--stroke);border-radius:var(--r-xl);box-shadow:var(--shadow-1);padding:1.2rem}
-
-/* Lists */
-.listing-card,.walker-card,.event-card{background:#fff;border:1px solid var(--stroke);border-radius:var(--r-xl);box-shadow:var(--shadow-1);overflow:hidden;transition:.25s}
+/* Cards / media */
+.card{
+  background: var(--glass);
+  border: 1px solid var(--glass-stroke);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-1);
+  padding: 1.2rem;
+  backdrop-filter: blur(8px) saturate(120%);
+}
+.listing-card,.walker-card,.event-card{
+  background: var(--surface);
+  border:1px solid var(--stroke);
+  border-radius:var(--r-xl);
+  box-shadow:var(--shadow-1);
+  overflow:hidden; transition:.25s;
+}
 .listing-card:hover,.walker-card:hover,.event-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-2)}
-.listing-img,.walker-img,.event-img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.listing-img,.walker-img,.event-img{width:100%;aspect-ratio:4/3;object-fit:cover;border-bottom:1px solid var(--stroke)}
 
 /* Chat */
 .chat-window{max-width:760px;margin:1rem auto;border:1px solid var(--stroke);border-radius:22px;overflow:hidden;box-shadow:var(--shadow-1)}
-.chat-header{background:#fff;border-bottom:1px solid var(--stroke);padding:.8rem 1rem}
-.chat-body{background:linear-gradient(180deg,#fafbff,#fff);min-height:260px;max-height:420px;overflow:auto;padding:1rem;display:flex;flex-direction:column;gap:.5rem}
-.chat-input{display:flex;gap:.5rem;border-top:1px solid var(--stroke);background:#fff;padding:.8rem}
+.chat-header{background:var(--surface);border-bottom:1px solid var(--stroke);padding:.8rem 1rem}
+.chat-body{background:linear-gradient(180deg,color-mix(in oklab,var(--surface),#fafbff 12%),var(--surface));min-height:260px;max-height:420px;overflow:auto;padding:1rem;display:flex;flex-direction:column;gap:.5rem}
+.chat-input{display:flex;gap:.5rem;border-top:1px solid var(--stroke);background:var(--surface);padding:.8rem}
+
+/* Floating Action Button area (space on small screens) */
+@media (max-width:840px){ body{padding-bottom:84px} }
