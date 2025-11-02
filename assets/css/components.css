@@ -1,17 +1,66 @@
-.btn{--bg:var(--violet);--fg:#fff;display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.1rem;border-radius:14px;font-weight:800;border:2px solid #0b1020;background:var(--bg);color:var(--fg);box-shadow:6px 6px 0 #0b1020;cursor:pointer;text-decoration:none;transition:.2s}
+/* Buttons */
+.btn{
+  --bg:var(--violet); --fg:#fff;
+  display:inline-flex; align-items:center; gap:.5rem;
+  padding:.8rem 1.1rem; border-radius:14px;
+  font-weight:800; border:2px solid #0b1020;
+  background:var(--bg); color:var(--fg);
+  box-shadow:6px 6px 0 #0b1020; cursor:pointer; text-decoration:none; transition:.2s;
+}
+html[data-theme="dark"] .btn{border-color:#0b0f1e; box-shadow:6px 6px 0 #0b0f1e}
 .btn:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 #0b1020;filter:saturate(1.05)}
 .btn:active{transform:none;box-shadow:3px 3px 0 #0b1020}
-.btn-outline{--bg:#fff;--fg:#0b1020;background:#fff}
-.btn-mint{--bg:var(--mint)}
-.btn-pink{--bg:var(--pink)}
+.btn-outline{--bg:transparent; --fg:var(--text); background:var(--surface)}
+.btn-mint{--bg:var(--mint)} .btn-pink{--bg:var(--pink)}
 
-.input, .filterbar input, .filterbar select, .searchbar input{
-  padding:.85rem 1rem;border:1px solid var(--stroke);border-radius:14px;background:#fff;min-width:200px
+/* Inputs */
+.input,.filterbar input,.filterbar select,.searchbar input{
+  padding:.85rem 1rem; border:1px solid var(--stroke); border-radius:14px; background:var(--surface); min-width:200px; color:var(--text);
 }
-.input:focus, .filterbar input:focus, .filterbar select:focus{outline:none;border-color:var(--violet);box-shadow:0 0 0 4px rgba(123,92,251,.12)}
+.input:focus,.filterbar input:focus,.filterbar select:focus{
+  outline:none; border-color:var(--violet); box-shadow:0 0 0 4px color-mix(in oklab,var(--violet),transparent 80%);
+}
 
-.link{font-weight:700;color:#111;text-decoration:none;border-bottom:2px solid rgba(123,92,251,.25)}
+/* Small UI */
+.link{font-weight:700;color:var(--text);text-decoration:none;border-bottom:2px solid color-mix(in oklab,var(--violet),transparent 75%)}
 .link:hover{border-color:var(--violet)}
-
 .row{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.6rem}
-.chip{display:inline-flex;align-items:center;gap:.35rem;padding:.35rem .6rem;border-radius:999px;background:#f3f4ff;border:1px solid var(--stroke);font-weight:700}
+.chip{display:inline-flex;align-items:center;gap:.35rem;padding:.35rem .6rem;border-radius:999px;background:color-mix(in oklab,var(--violet),#fff 85%);border:1px solid var(--stroke);font-weight:700;color:var(--text)}
+
+/* Chat bubbles (basic) */
+.chat-msg{align-self:flex-start; background:var(--surface); border:1px solid var(--stroke); padding:.6rem .8rem; border-radius:14px; max-width:min(72ch,92%);}
+.chat-msg.me{align-self:flex-end; background:linear-gradient(90deg,var(--violet),var(--pink)); color:#fff; border-color:transparent}
+
+/* Toggle (Dark mode) */
+.theme-toggle{
+  display:inline-flex; align-items:center; gap:.5rem;
+  padding:.45rem .75rem; border-radius:999px; border:1px solid var(--stroke);
+  background:var(--surface); cursor:pointer; font-weight:800;
+}
+.theme-toggle .knob{
+  width:24px;height:24px;border-radius:999px;background:linear-gradient(90deg,var(--violet),var(--pink));
+}
+
+/* Floating Create Button */
+.fab{
+  position:fixed; right:20px; bottom:20px; z-index:60;
+  display:flex; align-items:center; gap:.6rem;
+}
+.fab .fab-main{
+  width:56px; height:56px; border-radius:999px; border:2px solid #0b1020;
+  display:inline-grid; place-items:center; font-size:26px; color:#fff;
+  background:linear-gradient(135deg,var(--violet),var(--pink));
+  box-shadow:8px 8px 0 #0b1020; cursor:pointer; transition:.2s;
+}
+html[data-theme="dark"] .fab .fab-main{border-color:#0b0f1e; box-shadow:8px 8px 0 #0b0f1e}
+.fab .fab-main:hover{transform:translate(-2px,-2px)}
+.fab .fab-menu{display:none; flex-direction:column; gap:.5rem}
+.fab.open .fab-menu{display:flex}
+.fab .fab-item{padding:.6rem .8rem; border-radius:12px; border:1px solid var(--stroke); background:var(--surface); font-weight:800; text-decoration:none}
+
+/* Modal */
+.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.35);backdrop-filter:blur(2px);display:none;z-index:55}
+.modal{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:min(560px,92vw);background:var(--surface);border:1px solid var(--stroke);border-radius:18px;box-shadow:var(--shadow-2);display:none;z-index:66}
+.modal-head{display:flex;justify-content:space-between;align-items:center;padding:1rem;border-bottom:1px solid var(--stroke)}
+.modal-body{padding:1rem}
+.modal.show,.modal-backdrop.show{display:block}
