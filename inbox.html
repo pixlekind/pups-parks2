@@ -12,7 +12,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="index.html">
-        <img src="assets/img/logo.svg" alt="logo" width="32" height="32" />
+        <img src="assets/img/logo.svg" width="32" height="32" alt="" />
         <span class="brand-text">Pups & Parks™</span>
       </a>
       <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
@@ -20,23 +20,22 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="feed.html">Feed</a></li>
-          <li><a href="inbox.html" class="active">Inbox</a></li>
+          <li><a class="active" href="inbox.html">Inbox</a></li>
           <li><a href="marketplace.html">Marketplace</a></li>
-          <li><a href="walker-dashboard.html">Dashboard</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main class="inbox">
+  <main class="inbox section">
     <div class="container">
       <h1>Messages</h1>
       <div class="chat-window">
-        <div class="chat-header"><strong>Support</strong></div>
+        <div class="chat-header"><strong id="chat-title">Support</strong></div>
         <div id="chat-messages" class="chat-body"></div>
         <div class="chat-input">
-          <input id="chat-input" placeholder="Type a message..." />
-          <button id="chat-send" class="btn">Send</button>
+          <input id="chat-input" placeholder="Type a message…" />
+          <button id="chat-send" class="btn btn-pink">Send</button>
         </div>
       </div>
     </div>
