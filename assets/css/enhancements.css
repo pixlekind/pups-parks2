@@ -1,20 +1,5 @@
-/* ===== Motion & Delight ===== */
-.reveal{ opacity:0; transform: translateY(18px) scale(.98); animation: fadeUp .7s cubic-bezier(.2,.7,.2,1) forwards; }
-@keyframes fadeUp{ to{ opacity:1; transform:none; } }
-
-/* Button ripple */
-.btn{ position:relative; overflow:hidden; }
-.btn::after{
-  content:''; position:absolute; left:50%; top:50%;
-  width:0; height:0; border-radius:50%;
-  background: rgba(255,255,255,.35);
-  transform: translate(-50%,-50%);
-  transition: width .6s, height .6s;
-}
-.btn:active::after{ width:260px; height:260px; }
-
-/* Hover lift for cards and listings */
-.card:hover, .listing-card:hover{ transform: translateY(-6px); }
-
-/* Micro transitions */
-a, button{ transition: color .2s, background .2s, border-color .2s, box-shadow .2s, transform .2s; }
+.reveal{opacity:0;transform:translateY(18px) scale(.98);animation:fadeUp .7s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes fadeUp{to{opacity:1;transform:none}}
+.btn{position:relative;overflow:hidden}
+.btn::after{content:'';position:absolute;left:50%;top:50%;width:0;height:0;border-radius:50%;background:rgba(255,255,255,.35);transform:translate(-50%,-50%);transition:width .6s,height .6s}
+.btn:active::after{width:260px;height:260px}
